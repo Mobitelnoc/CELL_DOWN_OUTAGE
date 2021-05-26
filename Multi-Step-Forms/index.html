@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="multiform.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header bg-dark">
+        Add New Outage
+      </div>
+      <div class="card-body">
+        <form method="post" action="">
+
+          <div class="step step-1 active">
+
+            <div class="form-group">
+              <label for="firstName">Type</label>
+              <select name="type" type="text"  placeholder="Type" value="<?php echo !empty($type)?$type:'';?>">
+              <option>Hua-2G</option>
+              <option>Hua-3G</option>
+              <option>Hua-4G</option>
+              <option>ZTE-2G</option>
+              <option>ZTE-3G</option>
+              <option>ZTE-4G</option>
+            </select>
+
+            </div>
+            <div class="form-group">
+              <label for="lastName">Site Name</label>
+              <input type="text" name="sitename" id="search" placeholder="Type Search..." autocomplete="off" required>
+                <div class="list-group" id="show-list">
+                          <!-- Here autocomplete list will be display -->
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nickName">Region</label>
+              <select name="region" type="text"  placeholder="Region" value="<?php echo !empty($region)?$region:'';?>">
+              <option>Colombo</option>
+              <option>Gampaha</option>
+              <option>Dehiwala</option>
+              <option>Homagama</option>
+              <option>Badulla</option>
+              <option>Kurunegala</option>
+              <option>Anuradhapura</option>
+              <option>Ampara</option>
+              <option>Polonnaruwa</option>
+              <option>Jaffna</option>
+              <option>Chilaw</option>
+              <option>Negombo</option>
+              <option>Galle</option>
+              <option>Matara</option>
+              <option>Monaragala</option>
+              <option>Kandy</option>
+              <option>Dehiovita</option>
+              <option>Piliyandala</option>
+              <option>Pettah</option>
+              <option>Ratnapura</option>
+            </select>
+            </div>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+
+          <div class="step step-2">
+            <div class="form-group">
+              <label for="firstName">Occured Time</label>
+              <div class='input-group date' id='datetimepicker1'>
+              <input name="occuredtime" type='text' placeholder="Occured Time" value="" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="firstName">Reported Time</label>
+              <div class='input-group date' id='datetimepicker2'>
+              <input name="reportedtime" type='text' placeholder="Reported Time" value="" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            </div>
+
+            <button type="button" class="previous-btn">Prev</button>
+            <button type="button" class="next-btn">Next</button>
+          </div>
+
+          <div class="step step-3">
+            <div class="form-group">
+              <label for="country">Reported To</label>
+              <input name="reportedto" type="text"  placeholder="Reported To" value="">
+            </div>
+            <div class="form-group">
+              <label for="city">Reported By</label>
+                <input name="reportedby" type="text"  placeholder="Reported By" value="" required readonly>
+            </div>
+            <div class="form-group">
+              <label for="postCode">Tx Reported</label>
+              <input name="txreportedto" type="text"  placeholder="TX Reported To" value="">
+            </div>
+
+            <div class="form-group">
+              <label for="city">Reason for Fault</label>
+              <input name="reasonforfault" type="text"  placeholder="Reason for Fault" value="">
+            </div>
+
+            <button type="button" class="previous-btn">Prev</button>
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="card-footer">
+
+      </div>
+    </div>
+
+  </div>
+<script src="multiform.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      // dateFormat: "yy-mm-dd",
+      format: 'YYYY-MM-DD HH:mm'
+    });
+
+    $('#datetimepicker2').datetimepicker({
+      // dateFormat: "yy-mm-dd",
+      format: 'YYYY-MM-DD HH:mm'
+    });
+
+  });
+  </script>
+
+  </body>
+</html>
